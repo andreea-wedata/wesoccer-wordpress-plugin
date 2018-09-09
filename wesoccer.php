@@ -46,7 +46,7 @@ add_action( 'wesoccer_virtual_pages', function( $controller ) {
         $html .= "<li><a href='/wesoccer/fixture/{$fixture['id']}/events'>{$fixture['home_team_name']}-{$fixture['match_datetime']}-{$fixture['away_team_name']}</a></li>";
     }
     $html .= "</ul></div>";
-    $controller->addPage( new \WeSoccer\VirtualPages\Page( '/custom/hmpf' ) )
+    $controller->addPage( new \WeSoccer\VirtualPages\Page( '/wesoccer/fixtures' ) )
         ->setTitle( 'Fixtures' )
             ->setContent($html)
         ->setTemplate( 'custom-page-form.php' );//this can be anything, it seems
