@@ -39,27 +39,35 @@ add_filter( 'the_permalink', function( $plink ) {
 add_action( 'wesoccer_virtual_pages', function( $controller ) {
     // first page
     $client = new \GuzzleHttp\Client();
-    $fixtures = $client->get("http://wesoccer.test/api/v1/team/37/fixtures");
-    $fixtures = json_decode($fixtures->getBody(), TRUE);
+    $competitions = $client->get("http://wesoccer.test/api/v1/competition/43/fixtures");
+    $competitions = json_decode($competitions->getBody(), TRUE);
     $html = "<div><ul>";
-    foreach ($fixtures AS $fixture) {
-        $html .= "<li><a href='/wesoccer/fixture/{$fixture['id']}/events'>{$fixture['home_team_name']}-{$fixture['match_datetime']}-{$fixture['away_team_name']}</a></li>";
-    }
+//    die(var_dump($competitions));
+//    foreach ($competitions AS $fixtures) {
+        foreach ($competitions AS $fixture) {
+            $html .= "<li><a href='/wesoccer/fixture/{$fixture['id']}/events'>{$fixture['home_team_name']}-{$fixture['match_datetime']}-{$fixture['away_team_name']}</a></li>";
+        }
+//    }
     $html .= "</ul></div>";
-    $controller->addPage( new \WeSoccer\VirtualPages\Page( '/wesoccer/fixtures' ) )
+    $controller->addPage( new \WeSoccer\VirtualPages\Page( '/wesoccer/competition/fixtures' ) )
         ->setTitle( 'Fixtures' )
             ->setContent($html)
         ->setTemplate( 'custom-page-form.php' );//this can be anything, it seems
 
-    foreach ($fixtures AS $fixture) {
-        $html = "<div><ul>";
-        $events = $client->get("http://wesoccer.test/api/v1/fixture/{$fixture['id']}/events");
+    $fixture_ids = [];
+    foreach ($competitions AS $fixture) {
+        $fixture_ids[] = $fixture['id'];
+    }
+    $fixture_ids = implode(",", $fixture_ids);
+    $html = "<div><ul>";
+    $fixtures_events = $client->get("http://wesoccer.test/api/v1/fixture/{$fixture['id']}/events");
+    foreach ($fixtures_events AS $fixture_id => $events) {
         $events = json_decode($events->getBody(), TRUE);
         foreach ($events AS $event) {
             $html .= "<li>{$event['event_type']}||{$event['time']['time']['minutes']}:{$event['time']['time']['seconds']}</li>";
         }
         $html .= "</ul></div>";
-        $controller->addPage( new \WeSoccer\VirtualPages\Page( "/wesoccer/fixture/{$fixture['id']}/events" ) )
+        $controller->addPage( new \WeSoccer\VirtualPages\Page( "/wesoccer/fixture/{$fixture_id}/events" ) )
         ->setTitle( 'My Second Custom Page' )
                 ->setContent($html)
         ->setTemplate( 'custom-page-deep.php' );
