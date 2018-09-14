@@ -11,8 +11,8 @@ $competition = new Competition($_GET['id']);
 ?>
 
 <div>
-    <a href='/swfl-1'>SWFL 1</a>
-    <a href='/swfl-2'>SWFL 2</a>
+    <a href='/wesoccer-competition/?id=59'>SWFL 1</a>
+    <a href='/wesoccer-competition/?id=60'>SWFL 2</a>
 </div>
 <div id="competition--info">
     <?php if (is_array($competition->competition_info)):?>

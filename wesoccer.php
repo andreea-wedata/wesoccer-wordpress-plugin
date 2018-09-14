@@ -15,22 +15,23 @@ include( dirname(__FILE__) . '/shortcode-fixture-display.php' );
             'swfl2' => 'SWFL 2'
         ];
         
-        foreach ($competitions AS $key => $competition) {
-            $$key = [
-                'post_title'    => wp_strip_all_tags('wesoccer competition'),
-                'post_status'   => 'publish',
-                'post_author'   => 1,
-                'post_type'     => 'page',
-            ];
-            wp_insert_post( $$key );
-        }
-//        $swfl_1 = array(
-//          'post_title'    => wp_strip_all_tags( 'SWFL 1' ),
-//          'post_status'   => 'publish',
-//          'post_author'   => 1,
-//          'post_type'     => 'page',
-//        );
-//        wp_insert_post( $swfl_1 );
+        //create the competition page
+        $competition_page = [
+            'post_title'    => wp_strip_all_tags('wesoccer competition'),
+            'post_status'   => 'publish',
+            'post_author'   => 1,
+            'post_type'     => 'page',
+        ];
+        wp_insert_post( $competition_page );
+        
+        //create the fixture page
+        $fixture_page = [
+            'post_title'    => wp_strip_all_tags('wesoccer fixture'),
+            'post_status'   => 'publish',
+            'post_author'   => 1,
+            'post_type'     => 'page',
+        ];
+        wp_insert_post( $fixture_page );
     }
 
     register_activation_hook(__FILE__, 'add_competition_pages');
