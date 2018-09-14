@@ -46,3 +46,10 @@ include( dirname(__FILE__) . '/shortcode-fixture-display.php' );
     }
     
     add_filter( 'page_template', 'wesoccer_page_template' );
+    
+    function wesoccer_enqueue_page_template_styles() {
+        if ( is_page( 'wesoccer-competition' ) ) {
+            wp_enqueue_style( 'page-template', 'assets/wesoccer.css' );
+        }
+    }
+    add_action( 'wp_enqueue_scripts', 'wesoccer_enqueue_page_template_styles' );
