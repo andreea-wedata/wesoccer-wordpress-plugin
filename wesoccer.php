@@ -6,15 +6,8 @@ include( dirname(__FILE__) . '/shortcode-fixture-display.php' );
   Plugin Name: WeSoccer Virtual Pages
  */
     $client = new \GuzzleHttp\Client();
-//    $competitions = $client->get("http://wesoccer.test/api/v1/competition/43/fixtures");
-//    $fixtures_events = $client->get("http://wesoccer.test/api/v1/fixture/{$dummy_id}/events");
     
     function add_competition_pages() {
-        $competitions = [
-            'swfl1' => 'SWFL 1',
-            'swfl2' => 'SWFL 2'
-        ];
-        
         //create the competition page
         $competition_page = [
             'post_title'    => wp_strip_all_tags('wesoccer competition'),
@@ -46,6 +39,17 @@ include( dirname(__FILE__) . '/shortcode-fixture-display.php' );
     }
     
     add_filter( 'page_template', 'wesoccer_page_template' );
+    
+    function wesoccer_fixture_page_template( $page_template )
+    {
+        if ( is_page( 'wesoccer-fixture' ) ) {
+            $page_template = dirname(__FILE__).'/wesoccer-fixture-template.php';
+            
+        }
+        return $page_template;
+    }
+    
+    add_filter( 'page_template', 'wesoccer_fixture_page_template' );
     
     function wesoccer_enqueue_page_template_styles() {
         if ( is_page( 'wesoccer-competition' ) ) {
