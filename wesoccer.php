@@ -54,6 +54,13 @@ include( dirname(__FILE__) . '/shortcode-fixture-display.php' );
     function wesoccer_enqueue_page_template_styles() {
         if ( is_page( 'wesoccer-competition' ) ) {
             wp_enqueue_style( 'page-template', plugins_url('/assets/wesoccer.css',__FILE__ ));
+            wp_enqueue_script( 'page-template', plugins_url('/assets/wesoccer.js',__FILE__ ));
         }
+
+        if ( is_page( 'wesoccer-fixture' ) ) {
+            wp_enqueue_style( 'page-template', plugins_url('/assets/wesoccer.css',__FILE__ ));
+            wp_enqueue_script( 'page-template', plugins_url('/assets/wesoccer.js',__FILE__ ));
+        }
+
     }
     add_action( 'wp_enqueue_scripts', 'wesoccer_enqueue_page_template_styles' );
