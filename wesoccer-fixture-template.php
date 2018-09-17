@@ -47,7 +47,99 @@ $events = $data['events'];
 </div>
 
 <div id="events--container">
-    
+    <table>
+        <?php foreach ($events AS $event): ?>
+        <tr id="event--container">
+            <!-- CARD -->
+            <?php if ($event['event_type'] == 'card'): ?>
+                
+                <?php if ($event['team_origin'] == 'HOME'): ?>
+                    <td><?php echo $event['team_name'] ?></td>
+                    <td><?php echo $event['team_short_name'] ?></td>
+                    <td><?php echo $event['time']['minutes'].":".$event['time']['seconds'] ?></td>
+                    <td><?php echo $event['extra_time']['minutes'].":".$event['extra_time']['seconds'] ?></td>
+                    <td><?php echo $event['shirt_colour'] ?></td>
+                    <td><?php echo $event['card_type'] ?></td>
+                    <td><?php echo $event['card_code'] ?></td>
+                    <td><?php echo $event['card_reason'] ?></td>
+                    <td><?php echo $event['player']['first_name'] ?></td>
+                    <td><?php echo $event['player']['last_name'] ?></td>
+                    <td><?php echo $event['player']['shirt_number'] ?></td>
+                
+                <?php elseif ($event['team_origin'] == 'AWAY'): ?>
+                    <td><?php echo $event['team_name'] ?></td>
+                    <td><?php echo $event['team_short_name'] ?></td>
+                    <td><?php echo $event['time']['minutes'].":".$event['time']['seconds'] ?></td>
+                    <td><?php echo $event['extra_time']['minutes'].":".$event['extra_time']['seconds'] ?></td>
+                    <td><?php echo $event['shirt_colour'] ?></td>
+                    <td><?php echo $event['card_type'] ?></td>
+                    <td><?php echo $event['card_code'] ?></td>
+                    <td><?php echo $event['card_reason'] ?></td>
+                    <td><?php echo $event['player']['first_name'] ?></td>
+                    <td><?php echo $event['player']['last_name'] ?></td>
+                    <td><?php echo $event['player']['shirt_number'] ?></td>
+                <?php endif; ?>
+            <!-- GOAL -->
+            <?php elseif ($event['event_type'] == 'goal'): ?>
+                <?php if ($event['team_origin'] == 'HOME'): ?>
+                    <td><?php echo $event['team_name'] ?></td>
+                    <td><?php echo $event['team_short_name'] ?></td>
+                    <td><?php echo $event['time']['minutes'].":".$event['time']['seconds'] ?></td>
+                    <td><?php echo $event['extra_time']['minutes'].":".$event['extra_time']['seconds'] ?></td>
+                    <td><?php echo $event['shirt_colour'] ?></td>
+                    <td><?php echo $event['goal_type'] ?></td>
+                    <td><?php echo $event['player']['first_name'] ?></td>
+                    <td><?php echo $event['player']['last_name'] ?></td>
+                    <td><?php echo $event['player']['shirt_number'] ?></td>
+                <?php elseif ($event['team_origin'] == 'AWAY'): ?>
+                    <td><?php echo $event['team_name'] ?></td>
+                    <td><?php echo $event['team_short_name'] ?></td>
+                    <td><?php echo $event['time']['minutes'].":".$event['time']['seconds'] ?></td>
+                    <td><?php echo $event['extra_time']['minutes'].":".$event['extra_time']['seconds'] ?></td>
+                    <td><?php echo $event['shirt_colour'] ?></td>
+                    <td><?php echo $event['goal_type'] ?></td>
+                    <td><?php echo $event['player']['first_name'] ?></td>
+                    <td><?php echo $event['player']['last_name'] ?></td>
+                    <td><?php echo $event['player']['shirt_number'] ?></td>
+                <?php endif; ?>
+            <!-- SUBSTITUTION -->
+            <?php elseif ($event['event_type'] == 'substitution'): ?>
+                <?php if ($event['team_origin'] == 'HOME'): ?>
+                    <td><?php echo $event['team_name'] ?></td>
+                    <td><?php echo $event['team_short_name'] ?></td>
+                    <td><?php echo $event['time']['minutes'].":".$event['time']['seconds'] ?></td>
+                    <td><?php echo $event['extra_time']['minutes'].":".$event['extra_time']['seconds'] ?></td>
+                    <td><?php echo $event['shirt_colour'] ?></td>
+                    <td><?php echo $event['player_on']['first_name'] ?></td>
+                    <td><?php echo $event['player_on']['last_name'] ?></td>
+                    <td><?php echo $event['player_on']['shirt_number'] ?></td>
+                    <td><?php echo $event['player_out']['first_name'] ?></td>
+                    <td><?php echo $event['player_out']['last_name'] ?></td>
+                    <td><?php echo $event['player_out']['shirt_number'] ?></td>
+                <?php elseif ($event['team_origin'] == 'AWAY'): ?>
+                    <td><?php echo $event['team_name'] ?></td>
+                    <td><?php echo $event['team_short_name'] ?></td>
+                    <td><?php echo $event['time']['minutes'].":".$event['time']['seconds'] ?></td>
+                    <td><?php echo $event['extra_time']['minutes'].":".$event['extra_time']['seconds'] ?></td>
+                    <td><?php echo $event['shirt_colour'] ?></td>
+                    <td><?php echo $event['player_on']['first_name'] ?></td>
+                    <td><?php echo $event['player_on']['last_name'] ?></td>
+                    <td><?php echo $event['player_on']['shirt_number'] ?></td>
+                    <td><?php echo $event['player_out']['first_name'] ?></td>
+                    <td><?php echo $event['player_out']['last_name'] ?></td>
+                    <td><?php echo $event['player_out']['shirt_number'] ?></td>
+                <?php endif; ?>
+            <!-- TIME -->
+            <?php elseif ($event['event_type'] == 'time'): ?>
+                <td><?php echo $event['time']['minutes'].":".$event['time']['seconds'] ?></td>
+                <td><?php echo $event['extra_time']['minutes'].":".$event['extra_time']['seconds'] ?></td>
+                <td><?php echo $event['time_event_type'] ?></td> <!-- EXTRA_TIME_PERIOD/MATCH/PENALTIES/PERIOD -->
+                <td><?php echo $event['time_event_status'] ?></td>
+                <td><?php echo $event['period_number'] ?></td>
+            <?php endif; ?>
+        </tr>
+        <?php endforeach; ?>
+    </table>
 </div>
 
 <?php
