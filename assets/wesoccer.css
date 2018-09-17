@@ -1,0 +1,960 @@
+/*
+===============================
+    ------> RESET <------
+===============================
+*/
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&subset=latin-ext");
+@import url("https://use.fontawesome.com/releases/v5.0.12/css/all.css");
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+q,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+li,
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:after,
+blockquote:before,
+q:after,
+q:before {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+button {
+    background-color: transparent;
+    outline: none;
+    border: 0;
+    cursor: pointer;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+}
+
+input {
+    border: none;
+    -webkit-appearance: none;
+}
+
+textarea {
+    resize: none;
+    border: none;
+}
+
+/*
+===============================
+------> GLOBAL STYLES <------
+===============================
+*/
+
+:root {
+    font-size: calc(1rem + ((1vw - 0.3rem) * 1.1111));
+    /* Prevent font scaling beyond this breakpoint */
+}
+
+@media only screen and (min-width: 1024px) {
+    :root {
+        font-size: calc(1rem + ((1vw - 0.6rem) * 1.1111));
+    }
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.4;
+    -webkit-font-kerning: normal;
+    font-kerning: normal;
+    -webkit-font-variant-ligatures: common-ligatures;
+    font-variant-ligatures: common-ligatures;
+    font-variant-alternates: swash(1);
+}
+
+:focus {
+    outline-color: #00ff00;
+}
+
+/*
+==================================
+------>      HELPERS      <------
+==================================
+*/
+
+.show {
+    visibility: visible !important;
+    display: block !important;
+}
+
+.hide {
+    display: none !important;
+}
+
+.bold {
+    font-weight: 600 !important;
+}
+
+.uppercase {
+    text-transform: uppercase !important;
+}
+
+.capitalize {
+    text-transform: capitalize !important;
+}
+
+.show-on-mobile {
+    display: block;
+}
+
+@media only screen and (min-width: 1024px) {
+    .show-on-mobile {
+        display: none;
+    }
+}
+
+.visually-hidden {
+    clip: rect(0, 0, 0, 0);
+    visibility: hidden;
+    opacity: 0;
+}
+
+.top-padding--medium {
+    padding-top: 1.379rem !important;
+}
+
+.block {
+    display: block !important;
+}
+
+.link--underline {
+    border-bottom: 2px solid #2c3e50 !important;
+}
+
+.flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.flex-start {
+    -webkit-box-pack: start !important;
+    -ms-flex-pack: start !important;
+    justify-content: flex-start !important;
+}
+
+.flex-end {
+    -webkit-box-pack: end !important;
+    -ms-flex-pack: end !important;
+    justify-content: flex-end !important;
+}
+
+.flex-column {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+    -ms-flex-direction: column !important;
+    flex-direction: column !important;
+}
+
+.flex-center {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.margin--clear {
+    margin: 0 !important;
+}
+
+.margin--small {
+    margin: 0.8rem !important;
+}
+
+.padding--clear {
+    padding: 0 !important;
+}
+
+.padding--small {
+    padding: 0.8rem !important;
+}
+
+.margin-top--small {
+    margin-top: 0.8rem !important;
+}
+
+.margin-top--medium {
+    margin-top: 1.379rem !important;
+}
+
+.margin-top--large {
+    margin-top: 1.903rem !important;
+}
+
+.margin-top--xlarge {
+    margin-top: 2.625rem !important;
+}
+
+.margin-bottom--pico {
+    margin-bottom: 0.145rem !important;
+}
+
+.margin-bottom--micro {
+    margin-bottom: 0.381rem !important;
+}
+
+.margin-bottom--tiny {
+    margin-bottom: 0.617rem !important;
+}
+
+.margin-bottom--small {
+    margin-bottom: 0.8rem !important;
+}
+
+.margin-bottom--medium {
+    margin-bottom: 1.379rem !important;
+}
+
+.margin-bottom--large {
+    margin-bottom: 1.903rem !important;
+}
+
+.margin-left--medium {
+    margin-left: 1.379rem !important;
+}
+
+.margin-right--medium {
+    margin-right: 1.379rem !important;
+}
+
+/*
+==================================
+------> FX TIMELINE STYLES <------
+==================================
+*/
+
+.fx-timeline__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.fx-timeline__wrapper ::-webkit-scrollbar {
+    width: 4px;
+    /* for vertical scrollbars */
+    height: 4px;
+    /* for horizontal scrollbars */
+}
+
+.fx-timeline__wrapper ::-webkit-scrollbar-track {
+    background: #ecf0f1;
+}
+
+.fx-timeline__wrapper ::-webkit-scrollbar-thumb {
+    background: #00ff00;
+}
+
+.fixtures {
+    width: 100%;
+}
+
+.fixtures__slider {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    overflow-x: scroll;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.fixtures .form__search {
+    margin: 0 0 1.379rem 0 !important;
+    width: 100% !important;
+}
+
+@media only screen and (min-width: 768px) {
+    .fixtures .form__search {
+        margin: 0 0 0.617rem 0 !important;
+    }
+}
+
+.fixtures .link--redirect {
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+    min-width: 100px;
+    margin: 0 0 1rem 0 !important;
+}
+
+.timeline {
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.timeline__lists {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: center;
+}
+
+.timeline__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.timeline__listitem {
+    margin: 0 !important;
+    line-height: 1.4rem;
+    min-height: 4rem;
+    cursor: pointer;
+}
+
+.timeline__listitem--inactive {
+    cursor: not-allowed;
+}
+
+@media only screen and (min-width: 1024px) {
+    .timeline__listitem {
+        line-height: 1.05rem;
+    }
+}
+
+.timeline__link {
+    min-width: 4rem;
+    min-height: 4rem;
+    width: 4rem;
+    color: #000000;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 0.381rem 1rem;
+    border: 1px solid #ecf0f1;
+    cursor: pointer;
+}
+
+.timeline__link--inactive {
+    cursor: not-allowed;
+    pointer-events: none;
+    color: #BDC3C7 !important;
+    background-color: #f4f6f6;
+}
+
+.timeline__link:hover {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    -webkit-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+}
+
+.timeline__link--active {
+    background-color: #2c3e50;
+    color: #ecf0f1 !important;
+}
+
+.timeline__link--active:hover {
+    background-color: #1e2a36;
+    -webkit-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+}
+
+.timeline__btn {
+    display: none !important;
+    min-width: 4rem;
+    font-size: 1.175rem !important;
+    border-radius: 0 !important;
+    min-height: 4rem;
+    background-color: #95A5A6 !important;
+    color: white !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background-color: transparent;
+}
+
+@media only screen and (min-width: 1024px) {
+    .timeline__btn {
+        display: block !important;
+    }
+}
+
+/*
+  ==================================
+  --------> FX LIST STYLES <--------
+  ==================================
+  */
+
+li a {
+    text-decoration: none !important;
+}
+
+.fx__content {
+    margin-top: 1.379rem;
+}
+
+.fx-league__heading {
+    text-align: center;
+    font-size: 1.175rem;
+    color: #2c3e50;
+    background-color: #ecf0f1;
+    padding: 0.145rem;
+}
+
+@media only screen and (min-width: 1024px) {
+    .fx-league__heading {
+        text-align: left;
+        font-size: 1rem;
+        padding-left: 0.617rem;
+    }
+}
+
+.fx-league__heading span {
+    font-size: inherit;
+    margin-right: 0.4em;
+}
+
+.fx-league__heading a {
+    font-size: inherit;
+}
+
+.fx-league__date {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+@media only screen and (min-width: 1024px) {
+    .fx-league__date {
+        text-align: left;
+        font-size: 0.725rem;
+        padding-left: 0.617rem;
+    }
+}
+
+.fx-league__fixture {
+    width: 100%;
+}
+
+.fx-league__fixture-wrapper {
+    display: table;
+    width: 100%;
+    vertical-align: middle !important;
+}
+
+.fx-league__list {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: center;
+}
+
+.fx-league__listitem {
+    width: 100%;
+    border-bottom: 1px solid #ecf0f1;
+    margin: 0 !important;
+}
+
+@media only screen and (min-width: 768px) {
+    .fx-league__listitem {
+        max-width: 90% !important;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .fx-league__listitem {
+        font-size: 0.8rem;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .fx-league__listitem {
+        font-size: 0.725rem;
+    }
+}
+
+.fx-league__link {
+    display: block;
+    padding: 1rem 0 1.379rem 0;
+}
+
+.fx-league__link:hover {
+    background-color: #f4f6f6;
+}
+
+.fixture__block {
+    display: table-cell;
+    text-align: center;
+    width: 72px;
+    vertical-align: middle;
+}
+
+.fixture__time {
+    -ms-flex-item-align: center;
+    align-self: center;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+@media only screen and (min-width: 481px) {
+    .fixture__time {
+        font-size: 0.8rem;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .fixture__time {
+        font-size: 0.725rem;
+    }
+}
+
+.fixture__time-box {
+    width: 81px;
+}
+
+.fixture__num {
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    background-color: #ecf0f1;
+}
+
+@media only screen and (min-width: 1024px) {
+    .fixture__num {
+        font-size: 0.725rem;
+    }
+}
+
+.fixture__num--play {
+    background-color: #00ff00 !important;
+}
+
+.fixture__num--period {
+    background-color: #f39c12 !important;
+}
+
+.fixture__num--completed {
+    background-color: #1c73ff !important;
+    color: #ecf0f1 !important;
+}
+
+.fixture__num span {
+    display: table-cell;
+    font-weight: 600;
+    padding: .1em .4em;
+    min-width: 36px;
+}
+
+.fixture__team-name {
+    display: none;
+    padding: 0 0 0 0.1em;
+}
+
+@media only screen and (min-width: 1024px) {
+    .fixture__team-name {
+        display: table-cell;
+    }
+}
+
+.fixture__team-shortname {
+    display: table-cell;
+    padding: 0 0 0 0.1em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media only screen and (min-width: 1024px) {
+    .fixture__team-shortname {
+        display: none;
+    }
+}
+
+.fixture__team {
+    display: table-cell;
+    max-width: 4em;
+    vertical-align: middle;
+}
+
+.fixture__team--home {
+    text-align: right;
+    padding-right: 0.6em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.fixture__team--home span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.fixture__team--away {
+    text-align: left;
+    padding-left: 0.6em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+}
+
+.fixture__team--away span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.kickoff_time--fixture {
+    color: #95A5A6;
+    padding: 0 0.4em;
+    display: table-cell;
+    width: 0.8rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    vertical-align: middle;
+}
+
+@media only screen and (min-width: 1200px) {
+    .kickoff_time--fixture {
+        font-size: 0.617rem;
+    }
+}
+
+.fixture__separator {
+    display: table-cell;
+    width: 0.617rem;
+    vertical-align: middle;
+    font-weight: 600;
+}
+
+.ft--fixture,
+.game_time--fixture {
+    display: table-cell;
+    max-width: 1em;
+    font-size: 0.8rem;
+    font-weight: 600;
+    vertical-align: middle;
+}
+
+.ft--fixture span,
+.game_time--fixture span {
+    display: table-cell;
+}
+
+@media only screen and (min-width: 1200px) {
+    .ft--fixture,
+    .game_time--fixture {
+        font-size: 0.617rem;
+    }
+}
+
+.ft--fixture {
+    color: #95A5A6;
+    padding: 0 2px;
+    text-align: right;
+}
+
+.game_time--fixture span {
+    color: #BDC3C7;
+    background-color: #2c3e50;
+    padding: 1px 4px;
+    border: 2px solid #00ff00;
+    border-radius: 50px;
+}
+
+@media only screen and (min-width: 481px) {
+    .game_time--fixture span {
+        padding: 1px 6px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .game_time--fixture span {
+        padding: 1px 10px;
+    }
+}
+
+.penalties__box {
+    position: absolute;
+}
+
+.penalties__num {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    color: #2c3e50;
+    font-size: 0.8rem;
+}
+
+@media only screen and (min-width: 768px) {
+    .penalties__num {
+        font-size: 0.617rem;
+    }
+}
+
+.penalties__num--play {
+    color: #00ff00 !important;
+}
+
+.penalties__num--period {
+    color: #f39c12 !important;
+}
+
+.penalties__num--completed {
+    color: #1c73ff !important;
+}
+
+.penalties__num span {
+    display: table-cell;
+    font-weight: 600;
+    min-width: 24px;
+}
+
+.fixture__note {
+    font-size: 9px;
+    display: table-cell;
+    font-weight: 400;
+    padding: 0 4px;
+    color: #95A5A6;
+}
+
+@media only screen and (min-width: 1024px) {
+    .fixture__note {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .fixture__note {
+        font-size: 12px;
+    }
+}
+
+.fixture__emblem {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 2em;
+    height: 2em;
+    color: #2c3e50;
+}
+
+/*
+  ==================================
+  ----------> FX SECTION <----------
+  ==================================
+  */
+
+.fixture__section {
+    width: 100%;
+}
+
+@media only screen and (min-width: 481px) {
+    .fixture__section {
+        width: 80%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .fixture__section {
+        width: 60%;
+    }
+}
+
+.fixture__section table {
+    width: 100%;
+    font-size: 0.8rem;
+    font-family: "Open Sans", sans-serif;
+    line-height: 1em;
+}
+
+@media only screen and (min-width: 768px) {
+    .fixture__section table {
+        font-size: 0.725rem;
+    }
+}
