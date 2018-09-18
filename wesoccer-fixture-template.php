@@ -118,7 +118,7 @@ $events = $data['events'];
                                 <span class="card__player"><?php echo $event['card_code'] ?> <?php echo $event['card_reason'] ?></span>
                                 </span>
                                 <span class="card__ico-box">
-                                    <span class="card__ico card__ico--yellow" style="background-color:#FFFFFF">
+                                    <span class="card__ico" style="background-color:#FFFFFF; border-color:<?php echo strtolower($event['card_type']) ?>;">
                                         <span class="card__player-num" style="background-color:#FFFFFF"><?php echo $event['player']['shirt_number'] ?></span>
                                     </span>
                                 </span>
@@ -147,7 +147,7 @@ $events = $data['events'];
                         <td colspan="2">
                             <div class="card__box card__box--left">
                                 <span class="card__ico-box">
-                                    <span class="card__ico card__ico--yellow" style="background-color:#FFFFFF">
+                                    <span class="card__ico" style="background-color:#FFFFFF; border-color:<?php echo strtolower($event['card_type']) ?>;">
                                         <span class="card__player-num"><?php echo $event['player']['shirt_number'] ?></span>
                                     </span>
                                 </span>
