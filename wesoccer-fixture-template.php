@@ -14,6 +14,148 @@ $events = $data['events'];
 //die(var_dump($data));
 ?>
 
+<!-- WORDPRESS TABS -->
+<div id="pageControls">
+    <div class="leagueSwitch">
+        <div class="js-dropdown">
+            <div class="activeItem activeLeague">
+                <a href="/fixtures-results"><span>SWPL1</span> <i class="material-icons">&#xE313;</i></a>
+            </div>
+            <!-- <div class="active">
+                <ul>
+                    <li data-leagueid="93" data-label="SWPL 1">SWPL 1</li>
+                    <li data-leagueid="471" data-label="SWPL 2">SWPL 2</li>
+                </ul>
+            </div> -->
+        </div>
+    </div>
+    <div class="tabControls">
+        <div class="js-dropdown">
+            <div class="activeItem activeTab d-block d-sm-none">
+                <span>Fixtures</span> <i class="material-icons">&#xE313;</i>
+            </div>
+            <ul>
+                <li class="active" data-tab-child="fixturesTab" data-label="Fixtures"><a href="/fixtures-results">Fixtures</a></li>
+                <li data-tab-child="resultsTab" data-label="Results"><a href="/fixtures-results">Results</a></li>
+                <li data-tab-child="leagueTableTab" data-label="League Table"><a href="/fixtures-results">League Table & Goals</a></li>
+                <li data-tab-child="leagueTableTab" data-label="League Table"><a href="/wesoccer-competition/?date=2018-09-15">Match Data</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- END OF WORDPRESS TABS -->
+
+
+ <!-- 
+     STYLES AND MARKUP FROM WESOCCER
+ -->
+
+<section class="fx-league">
+    <h4 class="list__heading fx-league__heading">
+        <?php echo $fixture['competition_name'] ?>
+        <abbr><?php echo $fixture['competition_short_name'] ?><abbr>
+    </h4>
+    <a href="<?php echo home_url() ?>/wesoccer-competition/?date=<?php echo $fixture['link_date'] ?>">
+        <?php echo $fixture['friendly_match_date'] ?>
+    </a>
+    
+
+    
+    <div id='fixture--container' class="flex__wrapper--lg-desktop">
+
+        <ul class="fx-league__list">
+
+            <!-- Fixture row-->
+            <li class="fx-league__listitem">
+
+                <a class="fx-league__link" href="<?php echo home_url() ?>/wesoccer-fixture/?id=<?php echo $fixture['id']; ?>">
+
+                    <!-- Fixture with scores -->
+                    <article class="fx-league__fixture">
+                        <div class="fx-league__fixture-wrapper">
+
+                            <!--Kick-off time -->
+                            <span class="kickoff_time--fixture">
+                                <?php echo $fixture['start_time']['hours'] ?>:<?php echo $fixture['start_time']['minutes'] ?>
+                            </span>
+
+                            
+                            <!-- Home team block -->
+                            <div class="fixture__team">
+                                <div class="fixture__team--home">
+                                    <span class="fixture__team-name"><?php echo $fixture['home_team']['name'] ?></span>
+                                    <abbr class="fixture__team-shortname"><?php echo $fixture['home_team']['name'] ?></abbr>
+                                    <div class="fixture__emblem">
+                                        <i class="material-icons">
+                                            insert_emoticon
+                                        </i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Score block -->
+                            <div class="fixture__block">
+                                <div class="fixture__box">
+                                    <span class="fixture__num ">
+                                        <span><?php echo $fixture['home_team']['goals'] ?></span>
+                                    </span>
+
+                                    <span class="fixture__separator">&ndash;</span>
+
+                                    <span class="fixture__num ">
+                                        <span><?php echo $fixture['away_team']['goals'] ?></span>
+                                    </span>
+
+                                </div>
+                                <div class="penalties__box">
+                                    <div class="penalties">
+                                        <span class="penalties__num ">
+                                                <span><?php echo $fixture['home_team']['penalties'] ?></span>
+                                        </span>
+
+                                        <span class="fixture__note">PENS</span>
+                                        <span class="penalties__num ">
+                                            <span><?php echo $fixture['away_team']['penalties'] ?></span>
+                                        </span>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Away team block -->
+                            <div class="fixture__team">
+                                <div class="fixture__team--away">
+                                    <div class="fixture__emblem">
+                                        <i class="material-icons">
+                                            insert_emoticon
+                                        </i>
+                                    </div>
+                                    <span class="fixture__team-name"><?php echo $fixture['away_team']['name'] ?></span>
+                                    <abbr class="fixture__team-shortname"><?php echo $fixture['away_team']['name'] ?></abbr>
+                                </div>
+                            </div>
+
+                            <!-- Game time -->
+                            <span class="game_time--fixture">
+                                <span>
+                                    <?php echo $fixture['minutes'] ?>&prime;
+                                </span>
+                            </span>
+
+                        </div>
+                    </article>
+                </a>
+            </li>
+            <!-- End of fixture row  -->
+
+        </ul>
+    </div>
+</section>
+
+<!-- 
+     END OF STYLES AND MARKUP FROM WESOCCER
+-->
+
+
 <div id="competition-data--container">
     <table>
         <tr>
