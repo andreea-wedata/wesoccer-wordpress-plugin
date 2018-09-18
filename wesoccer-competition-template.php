@@ -62,9 +62,7 @@ $data['fixtures'] = $grouped_fixtures;
         <div class="fx-timeline__wrapper">
             <!-- Left arrow  -->
             <button id="prev_btn" class="timeline__btn" type="button" name="button">
-            <i class="material-icons md-48">
-                keyboard_arrow_left
-            </i>
+                <i class="fa fa-chevron-left"></i>
             </button>
 
             <div id="timeline" class="timeline">
@@ -86,9 +84,7 @@ $data['fixtures'] = $grouped_fixtures;
 
             <!-- Right arrow  -->
             <button id="next_btn" class="timeline__btn" type="button" name="button">
-            <i class="material-icons md-48">
-                keyboard_arrow_right
-            </i>
+                <i class="fa fa-chevron-right"></i>
             </button>
         </div>
 
