@@ -214,23 +214,24 @@ body {
 ------>      TABLES     <------
 ===============================
 */
+
 table {
     font-variant-numeric: lining-nums tabular-nums;
     border-collapse: collapse;
-  }
-  
-  tr {
+}
+
+tr {
     border-bottom: 1px solid #ecf0f1;
-  }
-  
-  td, th {
+}
+
+td,
+th {
     padding: 0.5em 0;
     line-height: 1.05rem;
     vertical-align: middle;
     text-align: center;
     text-overflow: ellipsis;
-  }
-  
+}
 
 /*
 ==================================
@@ -997,7 +998,6 @@ li a {
     border-bottom: 1px solid #ecf0f1;
 }
 
-
 /*
   ===============================
   --------> CARD EVENTS <-------
@@ -1539,14 +1539,26 @@ teams__heading {
   ===============================
   ---> MAIN THEME OVERRIDES <----
   ===============================
-  */
+*/
 
-  @media screen and (min-width: 768px) {
+.plugin__link {
+    text-decoration: none !important;
+    color: white;
+}
+
+.plugin-dropdown__link {
+    text-decoration: none !important;
+    color: black;
+}
+
+#matchesContainer #pageControls .tabControls ul li {
+    padding: 0 !important;
+}
+
+@media screen and (min-width: 768px) {
     #matchesContainer #pageControls .tabControls ul li {
-        max-width: 25%!important;
-        padding: 0!important;
+        max-width: 25% !important;
     }
-
     #matchesContainer #pageControls .tabControls ul li a {
         padding: 20px 15px;
     }
