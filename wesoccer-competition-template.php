@@ -6,7 +6,7 @@ require_once('APIReader.php');
 get_header();
 
 $date = $_GET['date'];
-$data = APIReader::getResult("http://wesoccer.test/api/v1/fixtures/competitions/9,45,76/date/{$date}");
+$data = APIReader::getResult("http://develop.wesoccer.co.uk/api/v1/fixtures/competitions/9,45,76/date/{$date}");
 $grouped_fixtures = [];
 foreach ($data['fixtures'] as $element) {
     $grouped_fixtures[$element['group_by']][] = $element;

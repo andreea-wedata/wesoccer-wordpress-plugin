@@ -1,6 +1,7 @@
 <?php 
 
 require_once 'vendor/autoload.php';
+include ('settings.php');
 include( dirname(__FILE__) . '/shortcode-fixture-display.php' );
 /*
   Plugin Name: WeSoccer Virtual Pages

@@ -6,7 +6,7 @@ require_once('APIReader.php');
 get_header();
 
 $fixture_id = $_GET['id'];
-$data = APIReader::getResult("http://wesoccer.test/api/v1/fixture/{$fixture_id}");
+$data = APIReader::getResult("http://develop.wesoccer.co.uk/api/v1/fixture/{$fixture_id}");
 
 $fixture = $data['fixture'];
 $events = $data['events'];
