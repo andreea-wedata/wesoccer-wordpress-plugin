@@ -20,12 +20,12 @@ $events = $data['events'];
             <div class="leagueSwitch">
                 <div class="js-dropdown">
                     <div class="activeItem">
-                        <span><a href="<?php echo home_url() ?>/wesoccer-competition/?date=2018-09-15"><abbr><?php echo $fixture['competition_short_name'] ?></abbr></a><i class="material-icons">&#xE313;</i></span>
+                        <span><a class="plugin__link" href="<?php echo home_url() ?>/wesoccer-competition/?date=2018-09-15"><abbr><?php echo $fixture['competition_short_name'] ?></abbr></a><i class="material-icons">&#xE313;</i></span>
                     </div>
                     <div class="active">
                         <ul>
-                            <a href="/fixtures-results"><li data-leagueid="93" data-label="SWPL 1">SWPL 1</li></a>
-                            <a href="/fixtures-results"><li data-leagueid="471" data-label="SWPL 2">SWPL 2</li></a>
+                            <li data-leagueid="93" data-label="SWPL 1"><a class="plugin-dropdown__link" href="/fixtures-results">SWPL 1</a></li>
+                            <li data-leagueid="471" data-label="SWPL 2"><a class="plugin-dropdown__link" href="/fixtures-results">SWPL 2</a></li>
                         </ul>
                     </div>
                 </div>
