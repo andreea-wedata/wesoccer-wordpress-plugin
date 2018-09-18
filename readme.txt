@@ -44,14 +44,12 @@ themes/website-womenspremierleague/includes/css/main-stylesheet.css
     height: 100%;
   }
 
-  @media screen and (min-width: 1024px) {
-
+  @media screen and (min-width: 768px) {
     #matchesContainer #pageControls .tabControls ul li {
-        width: 25%!important;
-        
+      max-width: 25%!important;
     }
+  }
 
-}
 
 and add a tab to 
 

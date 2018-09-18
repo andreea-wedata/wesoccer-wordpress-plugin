@@ -1541,8 +1541,7 @@ teams__heading {
   ===============================
   */
 
-  @media screen and (min-width: 1024px) {
-
+  @media screen and (min-width: 768px) {
     #matchesContainer #pageControls .tabControls ul li {
         max-width: 25%!important;
         padding: 0!important;
@@ -1551,5 +1550,4 @@ teams__heading {
     #matchesContainer #pageControls .tabControls ul li a {
         padding: 20px 15px;
     }
-
 }
