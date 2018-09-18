@@ -55,7 +55,8 @@ function wesoccer_field_competitions_cb( $args ) {
  <input type="text"
         id="<?php echo esc_attr( $args['label_for'] ); ?>"
         data-custom="<?php echo esc_attr( $args['wesoccer_custom_data'] ); ?>"
-        name="wesoccer_competition_ids[<?php echo esc_attr( $args['label_for'] ); ?>]"/>
+        name="wesoccer_competition_ids[<?php echo esc_attr( $args['label_for'] ); ?>]"
+        value="<?php echo get_option('wesoccer_competition_ids')['wesoccer_field_competitions'] ?>"/>
  <p>
      
  </p>
@@ -71,7 +72,7 @@ function wesoccer_field_wesoccer_token_cb( $args ) {
         id="<?php echo esc_attr( $args['label_for'] ); ?>"
         data-custom="<?php echo esc_attr( $args['wesoccer_custom_data'] ); ?>"
         name="wesoccer_token[<?php echo esc_attr( $args['label_for'] ); ?>]"
-        value="<?php echo get_option('wesoccer_token')[0] ?>"/>
+        value="<?php echo get_option('wesoccer_token')['wesoccer_field_wesoccer_token'] ?>"/>
  <p class="description">
  <?php esc_html_e( 'The token to allow you access to the WeSoccer endpoints.', 'wesoccer' ); ?>
  </p>
