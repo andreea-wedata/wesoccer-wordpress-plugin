@@ -51,147 +51,150 @@ $data['fixtures'] = $grouped_fixtures;
 
 <div class="container">
 
+    <div class="col-12">
+        <div class="tabTitle">
+            <h3>Match Data</h3>
+        </div>
+    </div>
+
+
 <!-- 
      STYLES AND MARKUP FROM WESOCCER
 -->
-<section class="fixtures">
-    <header>
-        <h2 class="page__heading">Match Data</h2>
-    </header>
-        <!-- TIMELINE -->
-        <div class="fx-timeline__wrapper">
-            <!-- Left arrow  -->
-            <button id="prev_btn" class="timeline__btn" type="button" name="button">
-                <i class="fa fa-chevron-left"></i>
-            </button>
+        <section class="fixtures">
+            <!-- TIMELINE -->
+            <div class="fx-timeline__wrapper">
+                <!-- Left arrow  -->
+                <button id="prev_btn" class="timeline__btn" type="button" name="button">
+                    <i class="fa fa-chevron-left"></i>
+                </button>
 
-            <div id="timeline" class="timeline">
-                <div class="timeline__lists">
-                    <div class="timeline__group">
-                        <ul id="list" class="timeline__list margin--clear">
+                <div id="timeline" class="timeline">
+                    <div class="timeline__lists">
+                        <div class="timeline__group">
+                            <ul id="list" class="timeline__list margin--clear">
 
-                            <?php foreach ($data['dates'] AS $date): ?>
+                                <?php foreach ($data['dates'] AS $date): ?>
 
-                                <li class='timeline__listitem'>
-                                    <a class='timeline__link' href='#'><?php echo $date['name'] ?><?php echo $date['friendly_date'] ?></a>
-                                </li>
+                                    <li class='timeline__listitem'>
+                                        <a class='timeline__link' href='#'><?php echo $date['name'] ?><?php echo $date['friendly_date'] ?></a>
+                                    </li>
 
-                            <?php endforeach; ?>
-                        </ul>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Right arrow  -->
+                <button id="next_btn" class="timeline__btn" type="button" name="button">
+                    <i class="fa fa-chevron-right"></i>
+                </button>
             </div>
 
-            <!-- Right arrow  -->
-            <button id="next_btn" class="timeline__btn" type="button" name="button">
-                <i class="fa fa-chevron-right"></i>
-            </button>
-        </div>
+            <!-- FIXTURES LIST -->
+            <div id='fixtures-container' class="fx__content">
+                <?php foreach ($data['fixtures'] AS $competition_name => $fixtures): ?>
 
-        <!-- FIXTURES LIST -->
-        <div id='fixtures-container' class="fx__content">
-            <?php foreach ($data['fixtures'] AS $competition_name => $fixtures): ?>
+                <section class="fx-league">
+                    <h4 class="list__heading fx-league__heading"><?php echo $competition_name; ?></h4>
+                    <?php foreach ($fixtures AS $fixture): ?>
 
-            <section class="fx-league">
-                <h4 class="list__heading fx-league__heading"><?php echo $competition_name; ?></h4>
-                <?php foreach ($fixtures AS $fixture): ?>
+                    <div id='fixture--container' class="flex__wrapper--lg-desktop">
+                        <ul class="fx-league__list">
 
-                <div id='fixture--container' class="flex__wrapper--lg-desktop">
-                    <ul class="fx-league__list">
+                            <!-- Fixture row-->
+                            <li class="fx-league__listitem">
+                                <a class="fx-league__link" href="<?php echo home_url() ?>/wesoccer-fixture/?id=<?php echo $fixture['id']; ?>">
 
-                        <!-- Fixture row-->
-                        <li class="fx-league__listitem">
-                            <a class="fx-league__link" href="<?php echo home_url() ?>/wesoccer-fixture/?id=<?php echo $fixture['id']; ?>">
+                                    <article class="fx-league__fixture">
+                                        <div class="fx-league__fixture-wrapper">
 
-                                <article class="fx-league__fixture">
-                                    <div class="fx-league__fixture-wrapper">
-
-                                        <!--Kick-off time -->
-                                        <span class="kickoff_time--fixture">
-                                            <?php echo $fixture['start_time']['hours'] ?>:<?php echo $fixture['start_time']['minutes'] ?>
-                                        </span>
-
-                                       
-                                        <!-- Home team block -->
-                                        <div class="fixture__team">
-                                            <div class="fixture__team--home">
-                                                <span class="fixture__team-name"><?php echo $fixture['home_team']['name'] ?></span>
-                                                <abbr class="fixture__team-shortname"><?php echo $fixture['home_team']['name'] ?></abbr>
-                                                <div class="fixture__emblem">
-                                                    <i class="material-icons">
-                                                        insert_emoticon
-                                                    </i>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Score block -->
-                                        <div class="fixture__block">
-                                            <div class="fixture__box">
-                                                <span class="fixture__num ">
-                                                    <span><?php echo $fixture['home_team']['goals'] ?></span>
-                                                </span>
-
-                                                <span class="fixture__separator">&ndash;</span>
-
-                                                <span class="fixture__num ">
-                                                    <span><?php echo $fixture['away_team']['goals'] ?></span>
-                                                </span>
-
-                                            </div>
-                                            <div class="penalties__box">
-                                                <div class="penalties">
-                                                    <span class="penalties__num ">
-                                                         <span><?php echo $fixture['home_team']['penalties'] ?></span>
-                                                    </span>
-
-                                                    <span class="fixture__note">PENS</span>
-                                                    <span class="penalties__num ">
-                                                        <span><?php echo $fixture['away_team']['penalties'] ?></span>
-                                                    </span>
-
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Away team block -->
-                                        <div class="fixture__team">
-                                            <div class="fixture__team--away">
-                                                <div class="fixture__emblem">
-                                                    <i class="material-icons">
-                                                        insert_emoticon
-                                                    </i>
-                                                </div>
-                                                <span class="fixture__team-name"><?php echo $fixture['away_team']['name'] ?></span>
-                                                <abbr class="fixture__team-shortname"><?php echo $fixture['away_team']['name'] ?></abbr>
-                                            </div>
-                                        </div>
-
-                                        <!-- Game time -->
-                                        <span class="game_time--fixture">
-                                            <span>
-                                                <?php echo $fixture['minutes'] ?>&prime;
+                                            <!--Kick-off time -->
+                                            <span class="kickoff_time--fixture">
+                                                <?php echo $fixture['start_time']['hours'] ?>:<?php echo $fixture['start_time']['minutes'] ?>
                                             </span>
-                                        </span>
 
-                                    </div>
-                                </article>
-                            </a>
-                        </li>
-                        <!-- End of fixture row  -->
+                                            <!-- Home team block -->
+                                            <div class="fixture__team">
+                                                <div class="fixture__team--home">
+                                                    <span class="fixture__team-name"><?php echo $fixture['home_team']['name'] ?></span>
+                                                    <abbr class="fixture__team-shortname"><?php echo $fixture['home_team']['name'] ?></abbr>
+                                                    <div class="fixture__emblem">
+                                                        <i class="material-icons">
+                                                            insert_emoticon
+                                                        </i>
+                                                    </div>
+                                                </div>
+                                            </div>
 
-                    </ul>
+                                            <!-- Score block -->
+                                            <div class="fixture__block">
+                                                <div class="fixture__box">
+                                                    <span class="fixture__num ">
+                                                        <span><?php echo $fixture['home_team']['goals'] ?></span>
+                                                    </span>
+
+                                                    <span class="fixture__separator">&ndash;</span>
+
+                                                    <span class="fixture__num ">
+                                                        <span><?php echo $fixture['away_team']['goals'] ?></span>
+                                                    </span>
+
+                                                </div>
+                                                    <div class="penalties__box">
+                                                        <div class="penalties">
+
+                                                            <span class="penalties__num ">
+                                                                <span><?php echo $fixture['home_team']['penalties'] ?></span>
+                                                            </span>
+
+                                                            <span class="fixture__note">PENS</span>
+
+                                                            <span class="penalties__num ">
+                                                                <span><?php echo $fixture['away_team']['penalties'] ?></span>
+                                                            </span>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Away team block -->
+                                                <div class="fixture__team">
+                                                    <div class="fixture__team--away">
+                                                        <div class="fixture__emblem">
+                                                            <i class="material-icons">
+                                                                insert_emoticon
+                                                            </i>
+                                                        </div>
+                                                        <span class="fixture__team-name"><?php echo $fixture['away_team']['name'] ?></span>
+                                                        <abbr class="fixture__team-shortname"><?php echo $fixture['away_team']['name'] ?></abbr>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Game time -->
+                                                <span class="game_time--fixture">
+                                                    <span>
+                                                        <?php echo $fixture['minutes'] ?>&prime;
+                                                    </span>
+                                                </span>
+
+                                            </div>
+                                        </article>
+                                    </a>
+                                </li>
+                            <!-- End of fixture row  -->
+                            </ul>
+                        </div>
+                    <?php endforeach; ?>
+                    </section>
+
                 </div>
-                <?php endforeach; ?>
-            </section>
+            <?php endforeach; ?>
 
-        </div>
-        <?php endforeach; ?>
-
-    </div>   
-</section>
-</div>
-
+            </div>   
+        </section>
+    </div>
 </div>
 
 <!-- 
