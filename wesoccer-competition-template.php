@@ -21,7 +21,7 @@ $data['fixtures'] = $grouped_fixtures;
         <div class="leagueSwitch">
             <div class="js-dropdown">
                 <div class="activeItem">
-                    <span><a href="<?php echo home_url() ?>/wesoccer-competition/?date=2018-09-15?>">TEST</a><i class="material-icons">&#xE313;</i></span>
+                    <span><a href="<?php echo home_url() ?>/wesoccer-competition/?date=2018-09-15">TEST</a><i class="material-icons">&#xE313;</i></span>
                 </div>
                 <div class="active">
                     <ul>
