@@ -15,35 +15,41 @@ $data['fixtures'] = $grouped_fixtures;
 ?>
 
 <!-- WORDPRESS TABS -->
-<div id="pageControls">
-    <div class="leagueSwitch">
-        <div class="js-dropdown">
-            <div class="activeItem activeLeague">
-                <a href="/fixtures-results"><span>SWPL1</span> <i class="material-icons">&#xE313;</i></a>
+
+<div id="matchesContainer">
+    <div id="pageControls">
+        <div class="leagueSwitch">
+            <div class="js-dropdown">
+                <div class="activeItem">
+                    <span><a href="<?php echo home_url() ?>/wesoccer-competition/?date=2018-09-15?>">TEST</a><i class="material-icons">&#xE313;</i></span>
+                </div>
+                <div class="active">
+                    <ul>
+                        <a href="/fixtures-results"><li data-leagueid="93" data-label="SWPL 1">SWPL 1</li></a>
+                        <a href="/fixtures-results"><li data-leagueid="471" data-label="SWPL 2">SWPL 2</li></a>
+                    </ul>
+                </div>
             </div>
-            <!-- <div class="active">
+        </div>
+        <div class="tabControls">
+            <div class="js-dropdown">
+                <div class="activeItem activeTab d-block d-sm-none">
+                    <span><a href="/wesoccer-competition/?date=2018-09-15">Match Data</a></span> <i class="material-icons">&#xE313;</i>
+                </div>
                 <ul>
-                    <li data-leagueid="93" data-label="SWPL 1">SWPL 1</li>
-                    <li data-leagueid="471" data-label="SWPL 2">SWPL 2</li>
+                    <li data-tab-child="fixturesTab" data-label="Fixtures"><a href="/fixtures-results">Fixtures</a></li>
+                    <li data-tab-child="resultsTab" data-label="Results"><a href="/fixtures-results">Results</a></li>
+                    <li data-tab-child="leagueTableTab" data-label="League Table"><a href="/fixtures-results">League Table & Goals</a></li>
+                    <li class="active" data-tab-child="leagueTableTab" data-label="Match Data"><a href="/wesoccer-competition/?date=2018-09-15">Match Data</a></li>
                 </ul>
-            </div> -->
-        </div>
-    </div>
-    <div class="tabControls">
-        <div class="js-dropdown">
-            <div class="activeItem activeTab d-block d-sm-none">
-                <span>Fixtures</span> <i class="material-icons">&#xE313;</i>
             </div>
-            <ul>
-                <li class="active" data-tab-child="fixturesTab" data-label="Fixtures"><a href="/fixtures-results">Fixtures</a></li>
-                <li data-tab-child="resultsTab" data-label="Results"><a href="/fixtures-results">Results</a></li>
-                <li data-tab-child="leagueTableTab" data-label="League Table"><a href="/fixtures-results">League Table & Goals</a></li>
-                <li data-tab-child="leagueTableTab" data-label="League Table"><a href="/wesoccer-competition/?date=2018-09-15">Match Data</a></li>
-            </ul>
         </div>
     </div>
-</div>
+   
+
 <!-- END OF WORDPRESS TABS -->
+
+<div class="container">
 
 <!-- 
      STYLES AND MARKUP FROM WESOCCER
@@ -188,10 +194,15 @@ $data['fixtures'] = $grouped_fixtures;
 
     </div>   
 </section>
+</div>
+
+</div>
 
 <!-- 
     END OF STYLES AND MARKUP FROM WESOCCER
 -->
+
+/*
 
 <div id='dates--container'>
     <table>
@@ -245,6 +256,8 @@ $data['fixtures'] = $grouped_fixtures;
     <?php endforeach; ?>
 </div>
 
+*/
+   
 <?php
 
 get_footer();
