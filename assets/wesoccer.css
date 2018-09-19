@@ -420,6 +420,13 @@ th {
     width: 100%;
 }
 
+.fixtures a,
+.fixtures a:link,
+.fixtures a:hover,
+.fixtures a:active {
+    color: black;
+}
+
 .fixtures__slider {
     width: 100%;
     display: -webkit-box;
