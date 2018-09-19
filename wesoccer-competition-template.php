@@ -101,7 +101,7 @@ $data['fixtures'] = $grouped_fixtures;
                     <h4 class="list__heading fx-league__heading"><?php echo $competition_name; ?></h4>
                     <?php foreach ($fixtures AS $fixture): ?>
 
-                    <div id='fixture--container' class="flex__wrapper--lg-desktop">
+                    <div class="flex__wrapper--lg-desktop">
                         <ul class="fx-league__list">
 
                             <!-- Fixture row-->
@@ -185,18 +185,19 @@ $data['fixtures'] = $grouped_fixtures;
                                     </a>
                                 </li>
                             <!-- End of fixture row  -->
+                            
                             </ul>
                         </div>
                     <?php endforeach; ?>
-                    </section>
 
-                </div>
+                </section>
+
             <?php endforeach; ?>
 
-            </div>   
         </section>
+
     </div>
-</div>
+
 
 <!-- 
     END OF STYLES AND MARKUP FROM WESOCCER
