@@ -33,6 +33,8 @@ class APIReader
 			'password' => get_option('wesoccer_password')['wesoccer_field_wesoccer_password'],
                 ]
         ]);
-        $token = json_decode($token_response->getBody(), TRUE)['token'];
+        $token = json_decode($token_response->getBody(), TRUE)['success']['token'];
+        
+        return $token;
     }
 }
