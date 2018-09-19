@@ -113,7 +113,6 @@ $events = $data['events'];
             <tfoot></tfoot>
             <tbody>
             <?php foreach ($events AS $event): ?>
-                <!-- CARD -->
 
                 <?php if ($event['event_type'] == 'card'): ?>
                     <?php if ($event['team_origin'] == 'HOME'): ?>
@@ -172,10 +171,9 @@ $events = $data['events'];
                     </tr>
                     <?php endif; ?>
 
-                    <!-- GOAL -->
                     <?php elseif ($event['event_type'] == 'goal'): ?>
                         <?php if ($event['team_origin'] == 'HOME'): ?>
-
+                         <!-- GOAL HOME -->
                         <tr class="goal--home">
                             <td colspan="2">
                                 <div class="goal__wrapper goal__box--right">
@@ -206,7 +204,7 @@ $events = $data['events'];
 
 
                         <?php elseif ($event['team_origin'] == 'AWAY'): ?>
-
+                         <!-- GOAL AWAY -->
                         <tr class="goal--away">
                             <td colspan="2"></td>
                             <td class="time__cell">
@@ -237,9 +235,9 @@ $events = $data['events'];
 
                         <?php endif; ?>
 
-                        <!-- SUBSTITUTION -->
                         <?php elseif ($event['event_type'] == 'substitution'): ?>
                             <?php if ($event['team_origin'] == 'HOME'): ?>
+                            <!-- SUBSTITUTION HOME -->
                                 <tr class="subs--home">
                                     <td colspan="2">
                                         <!-- Player ON -->
@@ -274,7 +272,7 @@ $events = $data['events'];
                                 </tr>
 
                                 <?php elseif ($event['team_origin'] == 'AWAY'): ?>
-
+                                    <!-- SUBSTITUTION AWAY -->
                                     <tr class="subs--away">
                                         <td colspan="2"></td>
                                         <td class="time__cell">
@@ -309,31 +307,30 @@ $events = $data['events'];
 
                                 <?php endif; ?>
 
-                        <!-- TIME EVENT -->
-                        <?php elseif ($event['event_type'] == 'time'): ?>
-                        <tr>
-                            <td colspan="2">
-                                <div class="time__box">
-                                    <span class="time__period"><?php echo $event['time_event_type'] ?> <?php echo $event['period_number'] ?> <?php echo $event['time_event_status'] ?></span>
-                                    <img class="stopwatch__ico" src="<?php echo home_url() ?>/wp-content/plugins/wesoccer/assets/images/stopwatch_50px.png" />
-                                </div>
-                            </td>
-                            <td class="time__cell">
-                                <span class="time">
-                                    <span class="time--full"><?php echo $event['time']['minutes'].":".$event['time']['seconds'] ?></span>
-                                    <?php if($event['extra_time']['minutes']) : ?>
-                                    <span class="time--event"><?php echo $event['extra_time']['minutes'].":".$event['extra_time']['seconds'] ?></span>
-                                    <?php endif; ?>
-                                </span>
-                            </td>
-                            <td colspan="2"></td>
-                        </tr>
+                        
+                                <?php elseif ($event['event_type'] == 'time'): ?>
+                                <!-- TIME EVENT -->
+                                <tr>
+                                    <td colspan="2">
+                                        <div class="time__box">
+                                            <span class="time__period"><?php echo $event['time_event_type'] ?> <?php echo $event['period_number'] ?> <?php echo $event['time_event_status'] ?></span>
+                                            <img class="stopwatch__ico" src="<?php echo home_url() ?>/wp-content/plugins/wesoccer/assets/images/stopwatch_50px.png" />
+                                        </div>
+                                    </td>
+                                    <td class="time__cell">
+                                        <span class="time">
+                                            <span class="time--full"><?php echo $event['time']['minutes'].":".$event['time']['seconds'] ?></span>
+                                            <?php if($event['extra_time']['minutes']) : ?>
+                                            <span class="time--event"><?php echo $event['extra_time']['minutes'].":".$event['extra_time']['seconds'] ?></span>
+                                            <?php endif; ?>
+                                        </span>
+                                    </td>
+                                    <td colspan="2"></td>
+                                </tr>
 
+                            <?php endif; ?>
 
-                    <?php endif; ?>
-
-
-                <?php endforeach; ?>
+                    <?php endforeach; ?>
 
             </tbody>
         </table>
