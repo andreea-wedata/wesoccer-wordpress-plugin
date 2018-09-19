@@ -226,7 +226,7 @@ tr {
 
 td,
 th {
-    padding: 0.5em 0;
+    padding: 0.5em 0!important;
     line-height: 1.05rem;
     vertical-align: middle;
     text-align: center;
@@ -420,6 +420,13 @@ th {
     width: 100%;
 }
 
+.fixtures a,
+.fixtures a:link,
+.fixtures a:hover,
+.fixtures a:active {
+    color: black;
+}
+
 .fixtures__slider {
     width: 100%;
     display: -webkit-box;
@@ -521,7 +528,7 @@ th {
 
 .timeline__link:hover {
     background-color: #2c3e50;
-    color: #ecf0f1;
+    color: #ecf0f1!important;
     -webkit-transition: all 0.3s ease-in;
     transition: all 0.3s ease-in;
 }
@@ -532,6 +539,7 @@ th {
 }
 
 .timeline__link--active:hover {
+    color: #ecf0f1!important;
     background-color: #1e2a36;
     -webkit-transition: all 0.3s ease-in;
     transition: all 0.3s ease-in;
@@ -636,6 +644,7 @@ li a {
     -ms-flex-align: center;
     align-items: center;
     text-align: center;
+    margin: 0!important;
 }
 
 .fx-league__listitem {
@@ -1563,3 +1572,27 @@ teams__heading {
         padding: 20px 15px;
     }
 }
+
+.wesoccer__tab {
+    padding: 0!important;
+}
+
+.wesoccer__tab a {
+    display: block;
+    padding: 15px!important;
+    width: 100%;
+    height: 100%;
+}
+
+.wesoccer__tab a:link,
+.wesoccer__tab a:hover,
+.wesoccer__tab a:active {
+    color: black;
+}
+
+.activeItem.d-block span a {
+    color: black;
+    text-decoration: none;
+}
+
+
