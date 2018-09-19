@@ -1,7 +1,8 @@
 <?php
 function wesoccer_settings_init() {
     register_setting( 'wesoccer', 'wesoccer_competition_ids' );
-    register_setting( 'wesoccer', 'wesoccer_token' );
+    register_setting( 'wesoccer', 'wesoccer_email' );
+    register_setting( 'wesoccer', 'wesoccer_password' );
 
     add_settings_section(
     'wesoccer_section_developers',
@@ -25,14 +26,28 @@ function wesoccer_settings_init() {
     );
 
     add_settings_field(
-    'wesoccer_field_wesoccer_token', // as of WP 4.6 this value is used only internally
+    'wesoccer_field_wesoccer_email', // as of WP 4.6 this value is used only internally
     // use $args' label_for to populate the id inside the callback
-    __( 'WeSoccer API Token', 'wesoccer' ),
-    'wesoccer_field_wesoccer_token_cb',
+    __( 'WeSoccer API Email', 'wesoccer' ),
+    'wesoccer_field_wesoccer_email_cb',
     'wesoccer',
     'wesoccer_section_developers',
     [
-    'label_for' => 'wesoccer_field_wesoccer_token',
+    'label_for' => 'wesoccer_field_wesoccer_email',
+    'class' => 'wesoccer_row',
+    'wesoccer_custom_data' => 'custom',
+    ]
+    );
+
+    add_settings_field(
+    'wesoccer_field_wesoccer_password', // as of WP 4.6 this value is used only internally
+    // use $args' label_for to populate the id inside the callback
+    __( 'WeSoccer API Password', 'wesoccer' ),
+    'wesoccer_field_wesoccer_password_cb',
+    'wesoccer',
+    'wesoccer_section_developers',
+    [
+    'label_for' => 'wesoccer_field_wesoccer_password',
     'class' => 'wesoccer_row',
     'wesoccer_custom_data' => 'custom',
     ]
@@ -65,16 +80,30 @@ function wesoccer_field_competitions_cb( $args ) {
  </p>
  <?php
 }
-function wesoccer_field_wesoccer_token_cb( $args ) {
- $options = get_option( 'wesoccer_token' );
+
+function wesoccer_field_wesoccer_email_cb( $args ) {
+ $options = get_option( 'wesoccer_email' );
  ?>
  <input type="text"
         id="<?php echo esc_attr( $args['label_for'] ); ?>"
         data-custom="<?php echo esc_attr( $args['wesoccer_custom_data'] ); ?>"
-        name="wesoccer_token[<?php echo esc_attr( $args['label_for'] ); ?>]"
-        value="<?php echo get_option('wesoccer_token')['wesoccer_field_wesoccer_token'] ?>"/>
+        name="wesoccer_email[<?php echo esc_attr( $args['label_for'] ); ?>]"
+        value="<?php echo get_option('wesoccer_email')['wesoccer_field_wesoccer_email'] ?>"/>
  <p class="description">
- <?php esc_html_e( 'The token to allow you access to the WeSoccer endpoints.', 'wesoccer' ); ?>
+ <?php esc_html_e( 'The user email to get the token for the WeSoccer API requests.', 'wesoccer' ); ?>
+ </p>
+ <?php
+}
+
+function wesoccer_field_wesoccer_password_cb( $args ) {
+ $options = get_option( 'wesoccer_password' );
+ ?>
+ <input type="password"
+        id="<?php echo esc_attr( $args['label_for'] ); ?>"
+        data-custom="<?php echo esc_attr( $args['wesoccer_custom_data'] ); ?>"
+        name="wesoccer_password[<?php echo esc_attr( $args['label_for'] ); ?>]"/>
+ <p class="description">
+ <?php esc_html_e( 'The user password to get the token for the WeSoccer API requests.', 'wesoccer' ); ?>
  </p>
  <?php
 }
