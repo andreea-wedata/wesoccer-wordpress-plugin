@@ -20,7 +20,7 @@ $events = $data['events'];
         <div class="leagueSwitch">
             <div class="js-dropdown">
                 <div class="activeItem activeLeague">
-                    <span><a class="plugin__link" href="<?php echo home_url() ?>/wesoccer-competition/?date=2018-09-15"><abbr><?php echo $fixture['competition_short_name'] ?></abbr></a><i class="material-icons">&#xE313;</i></span>
+                    <span><a class="plugin__link" href="<?php echo home_url() ?>/wesoccer-competition/?date=<?php echo date('Y-m-d') ?>"><abbr><?php echo $fixture['competition_short_name'] ?></abbr></a><i class="material-icons">&#xE313;</i></span>
                 </div>
                 <div class="active">
                     <ul>
@@ -33,13 +33,13 @@ $events = $data['events'];
         <div class="tabControls">
             <div class="js-dropdown">
                 <div class="activeItem activeTab d-block d-sm-none">
-                    <span><a href="/wesoccer-competition/?date=2018-09-15">Match Data</a></span> <i class="material-icons">&#xE313;</i>
+                    <span><a href="<?php echo home_url() ?>/wesoccer-competition/?date=<?php echo date('Y-m-d') ?>">Match Data</a></span> <i class="material-icons">&#xE313;</i>
                 </div>
                 <ul>
                     <li data-tab-child="fixturesTab" data-label="Fixtures"><a href="/fixtures-results">Fixtures</a></li>
                     <li data-tab-child="resultsTab" data-label="Results"><a href="/fixtures-results">Results</a></li>
                     <li data-tab-child="leagueTableTab" data-label="League Table"><a href="/fixtures-results">League Table & Goals</a></li>
-                    <li class="active" data-tab-child="leagueTableTab" data-label="Match Data"><a href="/wesoccer-competition/?date=2018-09-15">Match Data</a></li>
+                    <li class="active" data-tab-child="leagueTableTab" data-label="Match Data"><a href="/wesoccer-competition/?date=<?php echo date('Y-m-d') ?>">Match Data</a></li>
                 </ul>
             </div>
         </div>

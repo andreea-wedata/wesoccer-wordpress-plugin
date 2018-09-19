@@ -60,4 +60,4 @@ themes/website-womenspremierleague/includes/template-parts/view-fixtures-results
 
 on line 34
 
-<li data-tab-child="matchDataTab" data-label="Match Data"><a href="/wesoccer-competition/?date=2018-09-15">Match Data</a></li>
+<li data-tab-child="matchDataTab" data-label="Match Data"><a href="/wesoccer-competition/?date=<?php echo date('Y-m-d') ?>">Match Data</a></li>
