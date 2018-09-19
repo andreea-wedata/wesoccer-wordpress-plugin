@@ -135,7 +135,9 @@ $events = $data['events'];
                         <td class="time__cell">
                             <span class="time">
                                 <span class="time--full"><?php echo $event['time']['minutes'].":".$event['time']['seconds'] ?></span>
+                                <?php if($event['extra_time']['minutes']) : ?>
                                 <span class="time--event"><?php echo $event['extra_time']['minutes'].":".$event['extra_time']['seconds'] ?></span>
+                                <?php endif; ?>
                             </span>
                         </td>
                         <td colspan="2"></td>
@@ -149,7 +151,9 @@ $events = $data['events'];
                         <td class="time__cell">
                             <span class="time">
                                 <span class="time--full"><?php echo $event['time']['minutes'].":".$event['time']['seconds'] ?></span>
+                                <?php if($event['extra_time']['minutes']) : ?>
                                 <span class="time--event"><?php echo $event['extra_time']['minutes'].":".$event['extra_time']['seconds'] ?></span>
+                                <?php endif; ?>
                             </span>
                         </td>
                         <td colspan="2">
@@ -192,7 +196,9 @@ $events = $data['events'];
                             <td class="time__cell">
                                 <div class="time">
                                     <span class="time--full"><?php echo $event['time']['minutes'].":".$event['time']['seconds'] ?></span>
+                                    <?php if($event['extra_time']['minutes']) : ?>
                                     <span class="time--event"><?php echo $event['extra_time']['minutes'].":".$event['extra_time']['seconds'] ?></span>
+                                    <?php endif; ?>
                                 </div>
                             </td>
                             <td colspan="2"></td>
@@ -206,7 +212,9 @@ $events = $data['events'];
                             <td class="time__cell">
                                 <div class="time">
                                     <span class="time--full"><?php echo $event['time']['minutes'].":".$event['time']['seconds'] ?></span>
+                                    <?php if($event['extra_time']['minutes']) : ?>
                                     <span class="time--event"><?php echo $event['extra_time']['minutes'].":".$event['extra_time']['seconds'] ?></span>
+                                    <?php endif; ?>
                                 </div>
                             </td>
                             <td colspan="2">
@@ -256,7 +264,9 @@ $events = $data['events'];
                                     <td class="time__cell">
                                         <div class="time">
                                             <span class="time--full"><?php echo $event['time']['minutes'].":".$event['time']['seconds'] ?></span>
+                                            <?php if($event['extra_time']['minutes']) : ?>
                                             <span class="time--event"><?php echo $event['extra_time']['minutes'].":".$event['extra_time']['seconds'] ?></span>
+                                            <?php endif; ?>
 
                                         </div>
                                     </td>
@@ -270,7 +280,9 @@ $events = $data['events'];
                                         <td class="time__cell">
                                             <div class="time">
                                                 <span class="time--full"><?php echo $event['time']['minutes'].":".$event['time']['seconds'] ?></span>
+                                                <?php if($event['extra_time']['minutes']) : ?>
                                                 <span class="time--event"><?php echo $event['extra_time']['minutes'].":".$event['extra_time']['seconds'] ?></span>
+                                                <?php endif; ?>
 
                                             </div>
                                         </td>
@@ -309,7 +321,9 @@ $events = $data['events'];
                             <td class="time__cell">
                                 <span class="time">
                                     <span class="time--full"><?php echo $event['time']['minutes'].":".$event['time']['seconds'] ?></span>
+                                    <?php if($event['extra_time']['minutes']) : ?>
                                     <span class="time--event"><?php echo $event['extra_time']['minutes'].":".$event['extra_time']['seconds'] ?></span>
+                                    <?php endif; ?>
                                 </span>
                             </td>
                             <td colspan="2"></td>
