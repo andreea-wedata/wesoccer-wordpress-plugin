@@ -79,7 +79,15 @@ $data['fixtures'] = $grouped_fixtures;
                             <?php foreach ($data['dates'] AS $date): ?>
 
                                 <li class='timeline__listitem'>
-                                    <a class='timeline__link' href='<?php echo home_url() ?>/wesoccer-competition/?date=<?php echo $date['link_date']; ?>'><?php echo $date['name'] ?><?php echo $date['friendly_date'] ?></a>
+
+                                    <?php if($date['selected']) : ?>
+                                        <a class='timeline__link timeline__link--active' href='<?php echo home_url() ?>/wesoccer-competition/?date=<?php echo $date['link_date']; ?>'><?php echo $date['name'] ?><?php echo $date['friendly_date'] ?></a>
+
+                                    <?php else : ?>
+                                        <a class='timeline__link' href='<?php echo home_url() ?>/wesoccer-competition/?date=<?php echo $date['link_date']; ?>'><?php echo $date['name'] ?><?php echo $date['friendly_date'] ?></a>
+
+                                    <?php endif; ?>
+                                    
                                 </li>
 
                             <?php endforeach; ?>
