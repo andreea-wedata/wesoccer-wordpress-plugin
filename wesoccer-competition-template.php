@@ -27,7 +27,7 @@ $data['fixtures'] = $grouped_fixtures;
                 <div class="active">
                     <ul>
                         <li data-leagueid="93" data-label="SWPL 1"><a class="plugin-dropdown__link" href="/fixtures-results">SWPL 1</a></li>
-                        <li data-leagueid="471" data-label="SWPL 2"><a class="plugin-dropdown__link" href="/fixtures-results">SWPL 2</a></li>>
+                        <li data-leagueid="471" data-label="SWPL 2"><a class="plugin-dropdown__link" href="/fixtures-results">SWPL 2</a></li>
                     </ul>
                 </div>
             </div>
