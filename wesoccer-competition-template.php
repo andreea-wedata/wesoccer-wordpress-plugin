@@ -7,7 +7,7 @@ get_header();
 
 $date = $_GET['date'];
 $ids = get_option('wesoccer_competition_ids')['wesoccer_field_competitions'];
-$data = APIReader::getResult("http://develop.wesoccer.co.uk/api/v1/fixtures/competitions/{$ids}/date/{$date}");
+$data = APIReader::getResult("http://staging.wesoccer.co.uk/api/v1/fixtures/competitions/{$ids}/date/{$date}");
 $grouped_fixtures = [];
 foreach ($data['fixtures'] as $element) {
     $grouped_fixtures[$element['group_by']][] = $element;

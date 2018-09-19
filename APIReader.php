@@ -23,7 +23,7 @@ class APIReader
     static public function requestNewToken()
     {
         $client = new Client();
-        $token_response = $client->post("https://develop.wesoccer.co.uk/api/login", [
+        $token_response = $client->post("https://staging.wesoccer.co.uk/api/login", [
 		'headers' => [
 			'content-type' => 'application/x-www-form-urlencoded',
 			

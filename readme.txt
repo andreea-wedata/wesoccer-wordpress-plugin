@@ -1,3 +1,6 @@
+# WeSoccer Plugin
+
+##Installation
 To install:
 
 copy the contents of the repository to wp-content/plugins/wesoccer
