@@ -1583,3 +1583,16 @@ teams__heading {
     width: 100%;
     height: 100%;
 }
+
+.wesoccer__tab a:link,
+.wesoccer__tab a:hover,
+.wesoccer__tab a:active {
+    color: black;
+}
+
+.activeItem.d-block span a {
+    color: black;
+    text-decoration: none;
+}
+
+
