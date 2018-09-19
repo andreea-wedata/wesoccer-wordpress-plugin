@@ -81,10 +81,10 @@ $data['fixtures'] = $grouped_fixtures;
                                     <li class='timeline__listitem'>
 
                                         <?php if($date['selected']) : ?>
-                                            <a class='timeline__link timeline__link--active' href='<?php echo home_url() ?>/wesoccer-competition/?date=<?php echo $date['link_date']; ?>'><?php echo $date['name'] ?><?php echo $date['friendly_date'] ?></a>
+                                            <a class='timeline__link timeline__link--active' href='<?php echo home_url() ?>/wesoccer-competition/?date=<?php echo $date['link_date']; ?>'><?php echo $date['name'] ?> <?php echo $date['day'] ?> <?php echo $date['month']['M'] ?></a>
 
                                         <?php else : ?>
-                                            <a class='timeline__link' href='<?php echo home_url() ?>/wesoccer-competition/?date=<?php echo $date['link_date']; ?>'><?php echo $date['name'] ?><?php echo $date['friendly_date'] ?></a>
+                                            <a class='timeline__link' href='<?php echo home_url() ?>/wesoccer-competition/?date=<?php echo $date['link_date']; ?>'><?php echo $date['name'] ?> <?php echo $date['day'] ?> <?php echo $date['month']['M'] ?></a>
 
                                         <?php endif; ?>
                                         
