@@ -90,11 +90,19 @@ $events = $data['events'];
         </div>
         <div class="score__block">
             <span id="score--events" class="game-score"><?php echo $fixture['home_team']['goals'] ?> &ndash; <?php echo $fixture['away_team']['goals'] ?></span>
+
+            <?php if($fixture['home_team']['penalties'] || $fixture['away_team']['penalties']) : ?>
             <span id="penalties--events" class="penalties-score">
                 <span class="pen-score"><?php echo $fixture['home_team']['penalties'] ?></span>
-            <span class="pen__separator uppercase">pens</span>
-            <span class="pen-score"><?php echo $fixture['away_team']['penalties'] ?></span>
+                <span class="pen__separator uppercase">pens</span>
+                <span class="pen-score"><?php echo $fixture['away_team']['penalties'] ?></span>
             </span>
+            <?php endif; ?>
+
+            
+            <span id="game_time--events" class="game-time"><?php echo $fixture['minutes'] ?>&#697;</span>
+            
+
         </div>
         
     </div>
