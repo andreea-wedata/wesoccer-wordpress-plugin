@@ -1572,3 +1572,14 @@ teams__heading {
         padding: 20px 15px;
     }
 }
+
+.wesoccer__tab {
+    padding: 0!important;
+}
+
+.wesoccer__tab a {
+    display: block;
+    padding: 15px!important;
+    width: 100%;
+    height: 100%;
+}
