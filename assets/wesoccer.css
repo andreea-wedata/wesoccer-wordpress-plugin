@@ -226,7 +226,7 @@ tr {
 
 td,
 th {
-    padding: 0.5em 0;
+    padding: 0.5em 0!important;
     line-height: 1.05rem;
     vertical-align: middle;
     text-align: center;
@@ -644,6 +644,7 @@ li a {
     -ms-flex-align: center;
     align-items: center;
     text-align: center;
+    margin: 0!important;
 }
 
 .fx-league__listitem {
