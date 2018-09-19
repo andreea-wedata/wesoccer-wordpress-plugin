@@ -22,7 +22,7 @@ Paste this snippet at the end of
 
 themes/website-womenspremierleague/includes/css/main-stylesheet.css 
 
-/*
+/**
   ===============================
   ---> MAIN THEME OVERRIDES <----
   ===============================
