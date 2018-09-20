@@ -1,22 +1,22 @@
 # WeSoccer Plugin
 
-##Installation
+## Installation
 
 Copy the contents of the repository to `/wp-content/plugins/wesoccer`.
 
-in /wp-content/plugins/wesoccer, run `composer install`.
 
-link to a fixture with events: {your SWFL root address}/wesoccer-fixture/?id=1961
+In `/wp-content/plugins/wesoccer`, run `composer install`.
 
-link to a date with fixtures in 3 competitions: {your SWFL root address}/wesoccer-competition/?date=2018-09-15
+Link to a fixture with events: `{your SWFL root address}/wesoccer-fixture/?id=1961`
+
+Link to a date with fixtures in 3 competitions: `{your SWFL root address}/wesoccer-competition/?date=2018-09-15`
 
 
-/* ADDING MATCH DATA TAB TO A TEMPLATE */
+## Adding match data tab to a template
 
-Paste this snippet at the end of 
+At the end of `themes/website-womenspremierleague/includes/css/main-stylesheet.css` , paste the snippet below:
 
-themes/website-womenspremierleague/includes/css/main-stylesheet.css 
-
+`
 /**
   ===============================
   ---> MAIN THEME OVERRIDES <----
@@ -44,12 +44,22 @@ themes/website-womenspremierleague/includes/css/main-stylesheet.css
       max-width: 25%!important;
     }
   }
+`
 
+And add a tab to 
 
-and add a tab to 
-
-themes/website-womenspremierleague/includes/template-parts/view-fixtures-results.php
+`themes/website-womenspremierleague/includes/template-parts/view-fixtures-results.php`
 
 on line 34
 
-<li data-tab-child="matchDataTab" data-label="Match Data"><a href="/wesoccer-competition/?date=2018-09-15">Match Data</a></li>
+`<li data-tab-child="matchDataTab" data-label="Match Data"><a href="/wesoccer-competition/?date=2018-09-15">Match Data</a></li>`
+
+## Authentication
+
+In the administration section, in the left side menu, go to `WeSoccer Options`.
+
+To see a list of competitions and their IDs, go to [staging.wesoccer.co.uk/api/v1/competitions](https://staging.wesoccer.co.uk/api/v1/competitions).
+
+In the Competition IDs fields, add the IDs of the competitions you want to be displayed on the site, separated by comma. For example, to display SWPL 1 and SWPL 2, type `59,60` in the field.
+
+To create a user, go to [staging.wesoccer.co.uk/register](https://staging.wesoccer.co.uk/register).
