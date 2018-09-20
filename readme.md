@@ -16,14 +16,10 @@ Link to a date with fixtures in 3 competitions: `{your SWFL root address}/wesocc
 
 At the end of `themes/website-womenspremierleague/includes/css/main-stylesheet.css` , paste the snippet below:
 
-`
-/**
-  ===============================
-  ---> MAIN THEME OVERRIDES <----
-  ===============================
-  */
 
-  #matchesContainer #pageControls .tabControls ul li:last-child {
+## Main theme overrides
+
+`  #matchesContainer #pageControls .tabControls ul li:last-child {
     padding: 0;
   }
 
@@ -43,8 +39,7 @@ At the end of `themes/website-womenspremierleague/includes/css/main-stylesheet.c
     #matchesContainer #pageControls .tabControls ul li {
       max-width: 25%!important;
     }
-  }
-`
+  }`
 
 And add a tab to 
 
