@@ -54,8 +54,8 @@ And add a tab to
 
 by pasting the code below on line 34:
 
-```html
-<li data-tab-child="matchDataTab" data-label="Match Data"><a href="/wesoccer-competition/?date=2018-09-15">Match Data</a></li>
+```php
+<li data-tab-child="matchDataTab" data-label="Match Data"><a href="/wesoccer-competition/?date=<?php echo date('Y-m-d) ?>">Match Data</a></li>
 ```
 
 ## Authentication
