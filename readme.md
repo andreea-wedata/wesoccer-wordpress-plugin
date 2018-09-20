@@ -19,7 +19,8 @@ At the end of `themes/website-womenspremierleague/includes/css/main-stylesheet.c
 
 ## Main theme overrides
 
-`  #matchesContainer #pageControls .tabControls ul li:last-child {
+```css
+  #matchesContainer #pageControls .tabControls ul li:last-child {
     padding: 0;
   }
 
@@ -39,7 +40,8 @@ At the end of `themes/website-womenspremierleague/includes/css/main-stylesheet.c
     #matchesContainer #pageControls .tabControls ul li {
       max-width: 25%!important;
     }
-  }`
+  }
+```
 
 And add a tab to 
 
