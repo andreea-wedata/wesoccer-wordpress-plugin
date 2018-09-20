@@ -20,6 +20,11 @@ At the end of `themes/website-womenspremierleague/includes/css/main-stylesheet.c
 ## Main theme overrides
 
 ```css
+  /**
+  ===============================
+  ---> MAIN THEME OVERRIDES <----
+  ===============================
+  */
   #matchesContainer #pageControls .tabControls ul li:last-child {
     padding: 0;
   }
@@ -49,7 +54,9 @@ And add a tab to
 
 by pasting the code below on line 34:
 
-`<li data-tab-child="matchDataTab" data-label="Match Data"><a href="/wesoccer-competition/?date=2018-09-15">Match Data</a></li>`
+```html
+<li data-tab-child="matchDataTab" data-label="Match Data"><a href="/wesoccer-competition/?date=2018-09-15">Match Data</a></li>
+```
 
 ## Authentication
 
@@ -60,3 +67,5 @@ To see a list of competitions and their IDs, go to [staging.wesoccer.co.uk/api/v
 In the Competition IDs fields, add the IDs of the competitions you want to be displayed on the site, separated by comma. For example, to display SWPL 1 and SWPL 2, type `59,60` in the field.
 
 To create a user, go to [staging.wesoccer.co.uk/register](https://staging.wesoccer.co.uk/register).
+
+Type the email and password in the fields on the WeSoccer Options page.
