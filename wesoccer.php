@@ -4,6 +4,12 @@ require_once 'vendor/autoload.php';
 include ('settings.php');
 /*
   Plugin Name: WeSoccer Virtual Pages
+  Plugin URI: http://www.wesoccer.co.uk
+  Description: A plugin to consume data from the We.Data API and make it available on your website.
+  Version: 1.0
+  Author: We.Data Ltd
+  Author URI: http://www.wesoccer.co.uk
+  License: GPL3
  */
     $client = new \GuzzleHttp\Client();
     
