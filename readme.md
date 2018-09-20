@@ -50,7 +50,7 @@ And add a tab to
 
 `themes/website-womenspremierleague/includes/template-parts/view-fixtures-results.php`
 
-on line 34
+by pasting the code below on line 34:
 
 `<li data-tab-child="matchDataTab" data-label="Match Data"><a href="/wesoccer-competition/?date=2018-09-15">Match Data</a></li>`
 

@@ -496,8 +496,8 @@ th {
 }
 
 .timeline__link {
-    min-width: 4rem;
     min-height: 4rem;
+    max-width: 3.6rem;
     width: 4rem;
     color: #000000;
     display: -webkit-box;
